@@ -17,7 +17,7 @@
 import {onBeforeMount, onMounted, onUnmounted, onUpdated, reactive, computed, ref} from "vue";
 export default {
   // composition api 
-  //setup()함수로 맵핑(반응형api사용,)
+  //setup()함수로 맵핑(반응형dddapi사용,)
   setup(){
     const isActive = ref(true);
     // 필요한 로직작성하기
