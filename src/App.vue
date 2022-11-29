@@ -1,26 +1,34 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    {{ name }}
+  </div>
+  <button class="btn btn-primary" v-on:click="handleClick">Click</button>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import {ref} from "vue";
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
+  // composition api 
+  setup(){
+    // 필요한 로직작성하기
+    let name = ref("yeonju");
+    // const foo = (arg) =>{
+    //   return arg
+    // }
+    // const greet = foo(name)
+    console.log(name,"<nbame")
+    const handleClick =()=>{
+      name.value = "babo"
+      // 바뀐 변수가 리랜더가 되지 않음.
+    }
+    return {
+      name,
+      handleClick
+    }
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>
